@@ -1,0 +1,203 @@
+# =========================================================
+#  OS
+# =========================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*~
+.directory
+.Trash-*
+
+# =========================================================
+#  IDE / Editors
+# =========================================================
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.history/
+*.swp
+*.swo
+*.code-workspace
+nbproject/
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# =========================================================
+#  Logs / temp
+# =========================================================
+*.log
+*.tmp
+*.bak
+*.orig
+logs/
+tmp/
+
+# =========================================================
+#  Dart / Flutter
+# =========================================================
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+.fvm/
+doc/api/
+.metadata
+pubspec.lock
+coverage/
+*.log.*
+.flutter/
+
+# Generated files (décommenter si tu utilises build_runner / freezed / json_serializable)
+# *.g.dart
+# *.freezed.dart
+# *.mocks.dart
+# *.config.dart
+
+# Symboles
+app.*.symbols
+app.*.map.json
+
+# Web
+lib/generated_plugin_registrant.dart
+
+# =========================================================
+#  Secrets / env / credentials
+# =========================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.p8
+*.mobileprovision
+secrets.json
+
+# Firebase
+**/google-services.json
+**/GoogleService-Info.plist
+firebase_options.dart
+.firebaserc
+.firebase/
+
+# Cloudinary / divers API keys
+cloudinary.json
+api_keys.dart
+
+# =========================================================
+#  Android
+# =========================================================
+**/android/.gradle/
+**/android/.cxx/
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/**/gradle-wrapper.jar
+**/android/key.properties
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/android/app/build/
+**/android/build/
+**/android/gradle-app.setting
+**/android/.idea/
+*.keystore
+*.jks
+*.aab
+*.apk
+*.ap_
+*.dex
+
+# Signing
+key.properties
+upload-keystore.jks
+
+# =========================================================
+#  iOS / macOS (Xcode, CocoaPods)
+# =========================================================
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/build/
+**/ios/Runner.xcworkspace/xcuserdata/
+**/ios/Runner.xcodeproj/xcuserdata/
+**/ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+**/macos/Flutter/ephemeral/
+**/macos/Pods/
+**/macos/build/
+**/macos/Runner.xcworkspace/xcuserdata/
+**/macos/Runner.xcodeproj/xcuserdata/
+
+# Xcode
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.pbxuser
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# CocoaPods
+Podfile.lock
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+fastlane/README.md
+
+# =========================================================
+#  Linux / Windows / Web desktop builds
+# =========================================================
+**/linux/flutter/ephemeral/
+**/windows/flutter/ephemeral/
+**/web/build/
+
+# =========================================================
+#  Node / web (si Flutter Web ou tooling JS)
+# =========================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================================================
+#  Tests / coverage
+# =========================================================
+coverage/
+test/coverage/
+.lcov
+lcov.info
+test-results/
+junit.xml
