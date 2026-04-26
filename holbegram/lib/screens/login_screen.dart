@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../methods/auth_methods.dart';
 import '../widgets/text_field.dart';
+import 'home.dart';
 import 'signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -14,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   late bool _passwordVisible;
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -26,6 +29,26 @@ class _LoginScreenState extends State<LoginScreen> {
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
+  }
+
+  Future<void> _login() async {
+    setState(() => _isLoading = true);
+    String res = await AuthMethode().login(
+      email: emailController.text.trim(),
+      password: passwordController.text,
+    );
+    if (!mounted) return;
+    setState(() => _isLoading = false);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(res == 'success' ? 'Login' : res)),
+    );
+
+    if (res == 'success') {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const Home()),
+      );
+    }
   }
 
   @override
@@ -88,11 +111,20 @@ class _LoginScreenState extends State<LoginScreen> {
                             const Color.fromARGB(218, 226, 37, 24),
                           ),
                         ),
-                        onPressed: () {},
-                        child: const Text(
-                          'Log in',
-                          style: TextStyle(color: Colors.white),
-                        ),
+                        onPressed: _isLoading ? null : _login,
+                        child: _isLoading
+                            ? const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: CircularProgressIndicator(
+                                  color: Colors.white,
+                                  strokeWidth: 2,
+                                ),
+                              )
+                            : const Text(
+                                'Log in',
+                                style: TextStyle(color: Colors.white),
+                              ),
                       ),
                     ),
                     const SizedBox(height: 24),

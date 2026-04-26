@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/text_field.dart';
 import 'login_screen.dart';
+import 'upload_image_screen.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -115,7 +116,26 @@ class _SignUpState extends State<SignUp> {
                             const Color.fromARGB(218, 226, 37, 24),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          if (passwordController.text !=
+                              passwordConfirmController.text) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Passwords do not match'),
+                              ),
+                            );
+                            return;
+                          }
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => AddPicture(
+                                email: emailController.text.trim(),
+                                password: passwordController.text,
+                                username: usernameController.text.trim(),
+                              ),
+                            ),
+                          );
+                        },
                         child: const Text(
                           'Sign up',
                           style: TextStyle(color: Colors.white),
